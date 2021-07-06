@@ -7,49 +7,114 @@
     <title>Resume</title>
     <style>
         body {
-            margin: 20px 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        fieldset {
+            border: 9px solid rgb(23, 175, 245);
+        }
+        legend {
+            /* margin-left: calc(50% - 135px - 8px); */
+            text-align: center;
         }
         header {
+            padding: 5px 50px;
+        }
+        h1,h2{
+            margin: 0;
+            font-weight: lighter;
+        }
+        section {
             display: flex;
-            align-items:baseline;
         }
-        header .line {
-            width: 33%;
-            height: 10px;
-            background-color: cadetblue;
-            border: 1px solid black;
-            
+        section div {
+            margin: 10px;
         }
-        .vl {
-            width: 10px;
-            height: 200px;
-            background-color: cadetblue;
-            border: 1px solid black;
+        .line {
+            width: 5px;
+            height: auto;
+            background-color: rgb(23, 175, 245);
+        }
+        article {
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="body">
-        <header>
-            <div class="line"></div>
-            <div style="text-align: center; padding: 0 10%;">
-                <h1 style="font-weight: bolder; margin: 0;">PhantomOz</h1>
-                <h2 style="font-weight: lighter; margin: 0;">SDE</h2>
+    <fieldset>
+            <legend>
+                <header class="header"><h1>PhantomOz</h1>
+                <h2>SDE</h2>
+                </header>
+            </legend>
+        <section>
+            <div style="max-width: 50%;">
+                <article>
+                    <h2>Personal Profile</h2>
+                    <p>I am <strong>Satya Prakash.</strong>I am Web development Enthusiastic.
+                         I have many small projects in <b>HTML, CSS and JavaScript.</b>
+                        and thats why i am looking for an Internship in web development.</p>
+                </article>
+                <article>
+                    <h2>Honour and Achievement</h2>
+                    <p>I was college topper in my first year and probobally second topper in My University.</p>
+                    <p>My <a href="https://leetcode.com/satyaprakash6275/"> Leetcode</a> profile.</p>
+                    <p>My <a href="https://www.hackerrank.com/satyaprakash6275"> Hackerrank</a> profile.</p>
+                </article>
+                <article>
+                    <h2>Contact Details</h2>
+                    <p>
+                        <b>Mob No:- N/A</b><br>
+                        <b>Email :- </b>abc@gmail.com
+                    </p>
+                </article>
+                <article>
+                    <h2>Personal Interest</h2>
+                    <ul>
+                        <li>Help colleague to solve doubt</li>
+                        <li>Listen music</li>
+                        <li>Watching Cricket</li>
+                        <li>Comedy movie or Standup</li>
+                        <li>Startup news</li>
+                    </ul>
+                </article>
             </div>
             <div class="line"></div>
-        </header>
-        <div style="display: flex;">
-            <div style="text-align: left;">
-                <div class="vl"></div>
+            <div>
+                <article>
+                    <h2>Work Experiance</h2>
+                    <h3>My portfolio site :- <a href="www.spportfolio.w3spaces.com">Satya Prakash</a></h3>
+                    <p>No any professional experiance</p>
+                </article>
+                <article>
+                    <h2>Skills</h2>
+                    <ol>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>C/CPP</li>
+                        <li>DSA</li>
+                        <li>SQL</li>
+                    </ol>
+                </article>
+                <div style="height: 100px;"></div>
+                <article>
+                    <h2>Academics</h2>
+                    <details>
+                        <summary>10th - 2016</summary>
+                        <p>From :- <b>Govt Hasanpur High School, Lakhisarai (811311), Bihar</b></p>
+                    </details>
+                    <details>
+                        <summary>Intermediate - 2018</summary>
+                        <p>From :- <b>+2 Govt Hasanpur High School, Lakhisarai (811311), Bihar</b></p>
+                    </details>
+                    <details>
+                        <summary>Graduation</summary>
+                        <p><strong>BCA- (2018 - 21)</strong><br> From :-<b> College of Commerce Arts and Science, Patna </b><br>
+                            Under Patliputra University, Patna, Bihar</p>
+                    </details>
+                </article>
             </div>
-            <div style="text-align: right;">
-                
-                <div class="vl"></div>
-            </div>
-        </div>
-        <div>
-
-        </div>
-    </div>
+        </section>
+    </fieldset>
 </body>
 </html>
