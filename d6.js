@@ -37,7 +37,7 @@ let obj = {name:"satya",age:22}
         y[t] = (y[t] ? y[t]+1 : 1)
          mx > y[t] ? mx = mx : (mx = y[t],mx_key = t)
     })
-    return mx_key +" ("+ mx +")"
+    return mx_key +" ( "+ mx +" times )"
     }
     console.log("Q5.\n",max(['a',1,2,'a',3,4,1,'a',2,1,3,'a',1,4,'a','a',1]));
 
