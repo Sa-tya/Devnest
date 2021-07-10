@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Box</title>
+    <meta name="description" >
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .calc {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 50px;
+            background-color: slateblue;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-gap: 10px;
+            padding: 0 15%;
+            margin-top: 200px;
+        }
+        .clicked {
+            background-color: red !important ;
+            transition: 1s;
+            transform: rotateY(360deg);
+        }
+        .box {
+            padding: 30px 0;
+            font-size: 25px;
+            color: azure;
+            text-align: center;
+            border-radius: 20px;
+            border: 1px solid black;
+            background-color: rgb(136, 12, 95);
+            cursor: pointer;
+        }
+        .box:hover{
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <section class="calc"> <p><strong>Moves : </strong> <span id="reserve">0</span></p>
+        <p><strong>Remain Moves : </strong> <span id="vacant">100</span></p>
+    </section>
+    <section class="container" id="id">
+        <div class="box" id="0"></div>
+    </section>
+
+    <script>
+        function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+}
+        let box = document.getElementById("0")
+        let container = document.getElementById('id')
+        let temp = container.children
+        let reserv = document.getElementById('reserve')
+        let vacant = document.getElementById('vacant')
+
+        var number = []
+        for(let i=0;i<18;++i){ number.push(i)
+            number.push(i) }
+            shuffleArray(number)
+
+            box.innerHTML = "CLICK"
+        for(let i=1;i<36;++i){
+            let clon = document.createElement('div')
+            clon.className = "box"
+            clon.id = i;
+            clon.innerHTML =  "CLICK"
+            document.getElementById("id").appendChild(clon)
+        }
+        let prev = undefined
+        container.addEventListener('click',(t)=>{
+        if(t.target.tagName === 'DIV'){
+            let val = t.target.id
+            if(temp[val].classList.contains('clicked') === false)
+             {
+                temp[val].classList.add('clicked')
+                vacant.innerHTML -= 1
+                reserv.innerHTML = parseInt(reserv.innerHTML) + 1
+                temp[val].innerHTML = (number[val]<10 ? '0'+number[val]: number[val])
+            }
+            if(prev !== undefined) {
+            if(number[parseInt(prev)] === number[parseInt(val)]){
+                document.getElementById(val).style.visibility = 'hidden' ;
+                document.getElementById(prev).style.visibility = 'hidden';
+            }
+            else {
+                let p1 = prev
+                setTimeout(()=>{
+                temp[val].classList.remove('clicked')
+                temp[p1].classList.remove('clicked')
+                temp[val].innerHTML = "CLICK"
+                temp[p1].innerHTML = "CLICK"
+            },2000)
+            }
+            prev = undefined
+        }
+         else   prev = val
+        }
+         t.stopPropagation()
+        })
+    </script>
+</body>
+</html>
