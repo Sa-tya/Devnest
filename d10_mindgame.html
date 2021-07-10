@@ -25,7 +25,7 @@
         }
         .container {
             display: grid;
-            grid-template-columns: auto auto auto auto auto auto;
+            /* grid-template-columns: auto auto auto auto auto auto; */
             grid-gap: 10px;
             padding: 0 15%;
             margin-top: 200px;
@@ -48,17 +48,25 @@
         .box:hover{
             opacity: 0.8;
         }
+        @media (max-width:1000px){
+            .box { font-size: 15px; }
+            .calc {    font-size: 30px; }
+            .container {margin-top: 160px;}
+        }
     </style>
 </head>
 <body>
     <section class="calc"> <p><strong>Moves : </strong> <span id="reserve">0</span></p>
-        <p><strong>Remain Moves : </strong> <span id="vacant">100</span></p>
+        <p><strong>Remain Moves : </strong> <span id="vacant">0</span></p>
     </section>
     <section class="container" id="id">
         <div class="box" id="0"></div>
     </section>
 
     <script>
+        var n = 2 //prompt("Input a even number Between 2 and 8 - ")
+        n = parseInt(n)
+        if(n%2 === 0){
         function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -67,17 +75,33 @@
 }
         let box = document.getElementById("0")
         let container = document.getElementById('id')
+
+        let row = "",count = 0
+        for(let i=0;i<n;i++) row += 'auto '
+        container.style.gridTemplateColumns = row
+        n = n*n
+
         let temp = container.children
         let reserv = document.getElementById('reserve')
         let vacant = document.getElementById('vacant')
-
+        vacant.innerHTML = Math.floor( 2.5*n)
         var number = []
-        for(let i=0;i<18;++i){ number.push(i)
+        function result(){
+            if(count === n){
+            if(parseInt(vacant.innerHTML)>0) 
+            setTimeout(() => {
+                alert("You Won...")
+            }, 2000)
+            else setTimeout(() => {
+                alert("You lose...")
+            }, 2000); }
+        }
+        for(let i=0;i<n/2;++i){ number.push(i)
             number.push(i) }
             shuffleArray(number)
 
             box.innerHTML = "CLICK"
-        for(let i=1;i<36;++i){
+        for(let i=1;i<n;++i){
             let clon = document.createElement('div')
             clon.className = "box"
             clon.id = i;
@@ -97,8 +121,14 @@
             }
             if(prev !== undefined) {
             if(number[parseInt(prev)] === number[parseInt(val)]){
+             if(prev !== val){
                 document.getElementById(val).style.visibility = 'hidden' ;
                 document.getElementById(prev).style.visibility = 'hidden';
+                count +=2
+                prev = undefined
+                result()
+                }
+                else prev = val
             }
             else {
                 let p1 = prev
@@ -107,14 +137,17 @@
                 temp[p1].classList.remove('clicked')
                 temp[val].innerHTML = "CLICK"
                 temp[p1].innerHTML = "CLICK"
-            },2000)
+                prev = undefined
+            },1200)
             }
-            prev = undefined
+            
         }
          else   prev = val
         }
          t.stopPropagation()
         })
+    }
+    else alert("Enter a valid number")
     </script>
 </body>
 </html>
