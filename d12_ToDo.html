@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY TO Do List</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: monospace;
+        }
+        section {
+            background-color: skyblue;
+            padding: 20px 0;
+            text-align: center;
+        }
+        input {
+            font-size: large;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        button,#button{
+            background-color: springgreen;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            font-size: 30px;
+        }
+        div {
+            width: 50%;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #todo {
+            background-color: blueviolet;
+            margin: 20px;
+            padding: 10px;
+        }
+        #done {
+            background-color: chartreuse;
+            margin: 30px;
+        }
+        .body {
+            display: flex;
+            flex-flow: row;
+        }
+        li {
+            font-size: 20px;
+            padding: 5px 0;
+            margin: 5px 0;
+           font-weight: bold;
+           /* overflow: auto; */
+        }
+        .button {
+            margin: 0 20px;
+        }
+        @media (max-width:600px){
+            .body {
+                flex-flow: column;
+            }
+            div {
+                width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <input type="text" name="work" id="work" onkeypress="enter(event)" placeholder="Work..">
+        <input type="submit" id="button" value="+" onclick="add()">
+        <button onclick="reset()">Reset</button>
+    </section>
+    <section class="body">
+        <div> <h1>You have to Do</h1>
+            <ol id="todo">
+                
+            </ol>
+        </div>
+        <div> <h1>You have done</h1>
+            <ol id="done">
+                
+            </ol>
+        </div>
+    </section>
+    <script>
+        let todo = document.getElementById('todo')
+        let done = document.getElementById('done')
+        let work = document.getElementById('work')
+        // var count = 0
+        function enter(t){
+            if(t.keyCode == 13) add()
+        }
+        function refresh(){
+            Object.keys(localStorage).forEach((key)=>{
+            let li = document.createElement('li')
+            let button = document.createElement('button')
+            button.innerHTML = "Done"
+            button.className = "button"
+            li.id = key
+            button.onclick = function(){ remove_fun(li.id) }
+            li.innerHTML = localStorage.getItem(key)
+            li.appendChild(button)
+            todo.appendChild(li)
+        })
+        }
+        function reset(){
+            localStorage.clear()
+            location.reload()
+        }
+        function add (){
+            if(work.value !== ""){
+            let li = document.createElement('li')
+            let button = document.createElement('button')
+            button.innerHTML = "Done"
+            button.className = "button"
+            li.id = Math.floor(Math.random() * 1000) // count.toString()
+            button.onclick = function(){ remove_fun(li.id) }
+            li.innerHTML = work.value
+            localStorage.setItem(li.id,work.value)
+            work.value=""
+            li.appendChild(button)
+            todo.appendChild(li)}
+        }
+        function remove_fun(t){
+            let x =document.getElementById(t)
+            let del = x.children
+            x.removeChild(del[0])
+            done.appendChild(x)
+            localStorage.removeItem(t)
+    }
+    window.onload = function (){ refresh()}
+    </script>
+</body>
+</html>
