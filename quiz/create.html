@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            font-weight: bolder;
+            font-size: larger;
+            color: rgb(104, 66, 9);
+        }
+        body {
+            margin: 0;
+            background-color: indianred;
+        }
+        form {
+            margin: 0 auto;
+            text-align: center;
+            width: 80%;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            font-size: larger;
+            border-radius: 30px;
+            border: 2px solid black;
+        }
+        .question {
+            padding: 10px;
+            background-color: aqua;
+            margin: 20px 0;
+        }
+        textarea {
+            width: 80%;
+            margin: 10px;
+            padding: 10px;
+            font-size: 25px;
+            border-radius: 30px;
+            border: 2px solid black;
+        }
+        .option {
+            padding: 10px;
+            background-color: chartreuse;
+            margin-bottom: 100px;
+                   }
+        #submit {
+            background-color: dodgerblue;
+            position: absolute;
+            right: 10%;
+        }
+        @media (max-width:700px){
+            #submit {
+                right: 0;
+                bottom: -150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <form action="" method="get">
+
+            <div class="question">
+                <h1>Put Your Question here</h1>
+                <!-- <input type="text" name="question" id="" placeholder="Question" required> -->
+                <textarea name="question" id="" cols="0" rows="0" placeholder="Question" required></textarea>
+            </div>
+            <div class="option">
+                <h1>Put options here</h1>
+                A. <input type="text" name="op_a" id="a" placeholder="Put right answer here" required><br>
+                B. <input type="text" name="op_b" id="b" placeholder="Option B" required><br>
+                C. <input type="text" name="op_c" id="c" placeholder="Option C" required><br>
+                D. <input type="text" name="op_d" id="d" placeholder="Option D" required>
+                <input type="submit" value="Submit" id="submit">
+            </div>
+        </form>
+
+    </section>
+</body>
+</html>
