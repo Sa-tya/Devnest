@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: peru;
+        }
+        section{margin: 1% auto;}
+        form div{
+            margin: 20px;
+            font-size: 30px;
+            padding: 10px;
+            background-color: grey;
+            border: 2px solid black;
+            border-radius: 30px;
+        }
+        label {
+            padding: 20px;
+        }
+        p {font-size: 50px; color: rgb(102, 45, 7);
+            font-family: sans-serif; font-weight: bolder; margin-bottom: 50px;}
+        .option form {
+            display: grid;
+            padding: 40px;
+            grid-template-columns: auto auto;
+            background-color: chartreuse;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+            font-family: sans-serif;
+            font-weight: bolder;
+            font-size: larger;
+            color: white;
+            background-color: rgb(100, 12, 0);
+            border-radius: 20px;
+            border: 2px solid red;
+        }
+        /* input{width: 20px; font-size: 30px;} */
+        form div:hover{opacity: 0.8;}
+        .box {
+            border: 1px solid black;
+            margin: 10px 10%; padding: 40px;
+        }
+        @media (max-width:1200px){
+            .option {margin: 10px 1%; padding: 0;}
+        }
+        @media (max-width:800px){
+            .option form{grid-template-columns: auto; padding: 40px;}
+            .option {margin: 10px 5%;}
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box" style=" background-color: snow;">
+            <p>Q1. What is Programming ?</p>
+            <div class="option">
+                <form action="/action.php">
+                    <div>
+                        <input type="radio" name="op_a" id="a">
+                        <label for="a"> A . </label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="op_a" id="b">
+                        <label for="b"> B . </label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="op_a" id="c">
+                        <label for="c"> C . </label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="op_a" id="d">
+                        <label for="d"> D. </label><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="control" style="display: flex;">
+            <div class="prev" style="text-align: left; width: 50%;">
+                <button> << PREV </button>
+            </div>
+            <div class="next" style="text-align: right; width: 50%;">
+                <button>NEXT >> </button >
+            </div>
+        </div>
+    </section>
+</body>
+</html>
