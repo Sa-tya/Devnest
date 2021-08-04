@@ -1,0 +1,19 @@
+ body {
+     margin: 0;
+     text-align: center;
+ }
+.App-header {
+    margin: 0;
+    background-color: cornflowerblue;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+ul li {
+    border: 1px solid currentColor;
+    background-color: darkgray;
+    padding: 10px;
+    list-style-type: none;
+}
+.App-header Link {text-decoration: none;}
