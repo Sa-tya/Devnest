@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Play Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .optionContainer {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        section,
+        div {
+            padding: 10px;
+            margin: 10px;
+            /* border: 1px solid black; */
+        }
+        header h1{
+            font-family: cursive;
+            font-weight: bolder;
+            text-shadow: 5px 5px black;
+            color: burlywood;
+        }
+        header {
+            text-align: center;
+        }
+
+        .timer {
+            width: fit-content;
+            height: fit-content;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        #time {
+            padding: 5px 10px;
+        }
+
+        #opdiv div,
+        button {
+            cursor: pointer;
+        }
+
+        #opdiv div:hover,
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body class="w3-wheat">
+    <header class="w3-container w3-border-bottom">
+        <h1>Lets Quiz</h1>
+    </header>
+    <div class="timer w3-light-blue" style="margin-right: 10px; margin-left: auto;"> Time left - <span id="time"
+            class="w3-white">2:00</span></div>
+    <section class="w3-aqua">
+        <div id="qdiv" class="question w3-grey"><span>No.</span> <span> Question </span></div>
+        <div id="opdiv" class="optionContainer w3-cyan">
+            <div class="option w3-white"> A. <span></span></div>
+            <div class="option w3-white"> B. <span></span></div>
+            <div class="option w3-white"> C. <span></span></div>
+            <div class="option w3-white"> D. <span></span></div>
+        </div>
+        <div>
+        <button onclick="prev()" style="margin-left: 0px; margin-right: 40%;"> PREV</button>
+        <button onclick="next()" style="margin-right: 0px; margin-left: 40%;"> NEXT </button>
+        </div>
+    </section>
+</body>
+<script>
+    function qgenerate(t) {
+        qdiv[0].innerHTML = t + 1 + "."
+        qdiv[1].innerHTML = questions[t].question
+        for (let i = 0; i < 4; ++i) {
+            opdiv[i].children[0].innerHTML = questions[t].options[i + 1]
+        }
+    }
+
+    let questions = [{
+        question: "HTML stands for :- ",
+        options: {
+            1: "Hyper Text Markup Language",
+            2: "Hyper Markup Language",
+            3: "Hyper Text Language",
+            4: "Hyper Text Markup"
+        },
+        ans: "Hyper Text Markup Language"
+    },
+    {
+        question: "HTTP stands for :- ",
+        options: {
+            1: "Hyper Text Transfer",
+            2: "Hyper Markup Language",
+            3: "Hyper Text Language",
+            4: "Hyper Text Transfer Protocol"
+        },
+        ans: "Hyper Text Transfer Protocol"
+    }
+    ];
+    let qno = 0;
+    let qdiv = document.getElementById('qdiv').children
+    let opdiv = document.getElementById('opdiv').children
+    document.getElementById('opdiv').addEventListener('click',ansCheck);
+    function next() {
+        if (qno+1 !== questions.length) {
+            qgenerate(++qno);
+        }
+    }
+    function prev() {
+        if (qno !== 0) {
+            qgenerate(--qno)
+        }
+    }
+    function ansCheck(e){
+        if(e.target.innerHTML !== questions[qno].ans){
+        e.target.style.backgroundColor = 'red'
+    }
+
+    }
+    qgenerate(0);
+</script>
+
+</html>
