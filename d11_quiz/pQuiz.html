@@ -49,7 +49,9 @@
         button {
             cursor: pointer;
         }
-
+        .option {
+            background-color: white;
+        }
         #opdiv div:hover,
         button:hover {
             opacity: 0.9;
@@ -66,10 +68,10 @@
     <section class="w3-aqua">
         <div id="qdiv" class="question w3-grey"><span>No.</span> <span> Question </span></div>
         <div id="opdiv" class="optionContainer w3-cyan">
-            <div class="option w3-white"> A. <span></span></div>
-            <div class="option w3-white"> B. <span></span></div>
-            <div class="option w3-white"> C. <span></span></div>
-            <div class="option w3-white"> D. <span></span></div>
+            <div class="option"> A. <span></span></div>
+            <div class="option"> B. <span></span></div>
+            <div class="option"> C. <span></span></div>
+            <div class="option"> D. <span></span></div>
         </div>
         <div>
         <button onclick="prev()" style="margin-left: 0px; margin-right: 40%;"> PREV</button>
@@ -78,14 +80,6 @@
     </section>
 </body>
 <script>
-    function qgenerate(t) {
-        qdiv[0].innerHTML = t + 1 + "."
-        qdiv[1].innerHTML = questions[t].question
-        for (let i = 0; i < 4; ++i) {
-            opdiv[i].children[0].innerHTML = questions[t].options[i + 1]
-        }
-    }
-
     let questions = [{
         question: "HTML stands for :- ",
         options: {
@@ -111,6 +105,16 @@
     let qdiv = document.getElementById('qdiv').children
     let opdiv = document.getElementById('opdiv').children
     document.getElementById('opdiv').addEventListener('click',ansCheck);
+
+    function qgenerate(t) {
+        qdiv[0].innerHTML = t + 1 + "."
+        qdiv[1].innerHTML = questions[t].question
+        for (let i = 0; i < 4; ++i) {
+            opdiv[i].style.backgroundColor = 'white'
+            opdiv[i].children[0].innerHTML = questions[t].options[i + 1]
+        }
+    }
+
     function next() {
         if (qno+1 !== questions.length) {
             qgenerate(++qno);
@@ -122,10 +126,16 @@
         }
     }
     function ansCheck(e){
-        if(e.target.innerHTML !== questions[qno].ans){
-        e.target.style.backgroundColor = 'red'
+        let x= e.target;
+        if(x.tagName === 'DIV')
+        if(x.innerHTML !== questions[qno].ans){
+        x.style.backgroundColor = 'red'
     }
-
+    Object.keys(questions[qno].options).map((ele)=>{
+        if(questions[qno].options[ele] === questions[qno].ans)
+        opdiv[ele-1].style.backgroundColor = 'green'
+        // console.log(ele)
+    })
     }
     qgenerate(0);
 </script>
