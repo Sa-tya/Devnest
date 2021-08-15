@@ -6,6 +6,9 @@ Hi, I am satya Prakash. I am currently following Devnest Youtube channel and Dis
 
 This repo is not that great because it is just to show to devnest's friends. so, we can see each-others code and improve together.
 
+Check out my all project on [Satya Prakash](https://sa-tya.github.io/Devnest/)
+
+
 | Days (click to view code)                                                     | Topics Covered                         | Live Preview                                                                 |
 | ----------------------------------------------------------------------------- | -------------------------------------- | ---------------------------------------------------------------------------- |
 | [Day1](./d_1_2)                                                              | Basic Html From                        | [link]      
