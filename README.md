@@ -20,8 +20,8 @@ This repo is not that great because it is just to show to devnest's friends. so,
 | [Day10](./d10_mindgame)                                                             | Memory Cards                           | [link]      |
 | [Day11](./d11_quiz)                                                             | Quiz App                               | [link]      |
 | [Day12](./d12_ToDo)                                                             | Todo List                              | [link]       |
-| [Day13](./d13_14/use_api.html)                                                             | Api App                                | [link]       |
-| [Day14](./d13_14)                                                             | Pending !!                        | [link]       |
+| [Day13](./d13_14_15/use_api.html)                                                             | Api App                                | [link]       |
+| [Day14](./d13_14_15)                                                             | Pending !!                        | [link]       |
 | [Day15](./React/src)                                                             | React Basic App                        | [link]      |
 
 Thanks for visiting my repo !!!
