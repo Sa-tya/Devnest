@@ -9,7 +9,7 @@ This repo is not that great because it is just to show to devnest's friends. so,
 | Days (click to view code)                                                     | Topics Covered                         | Live Preview                                                                 |
 | ----------------------------------------------------------------------------- | -------------------------------------- | ---------------------------------------------------------------------------- |
 | [Day1](./d_1_2)                                                              | Basic Html From                        | [link]      
-| [Day2](./d_1_2/style.css)                                                              | Basic CSS Form                         | [link]                 |
+| [Day2](./d_1_2/d2.css)                                                              | Basic CSS Form                         | [link]                 |
 | [Day3](./d3)                                                              | Resume with css                        | [link]                  |
 | [Day4](./d4)                                                              | Clock with css                         | [link]                 |
 | [Day5](./d5)                                                              | Basic Calculator                       | [link] |
@@ -20,8 +20,8 @@ This repo is not that great because it is just to show to devnest's friends. so,
 | [Day10](./d10_mindgame)                                                             | Memory Cards                           | [link]      |
 | [Day11](./d11_quiz)                                                             | Quiz App                               | [link]      |
 | [Day12](./d12_ToDo)                                                             | Todo List                              | [link]       |
-| [Day13](./d13_14)                                                             | Api App                                | [link]       |
-| [Day14](./Day-14)                                                             | JS Events App                          | [link]       |
-| [Day15](./Day-15)                                                             | React Basic App                        | [link]      |
+| [Day13](./d13_14/use_api.html)                                                             | Api App                                | [link]       |
+| [Day14](./d13_14)                                                             | Pending !!                        | [link]       |
+| [Day15](./React/src)                                                             | React Basic App                        | [link]      |
 
 Thanks for visiting my repo !!!
