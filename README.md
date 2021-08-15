@@ -8,19 +8,19 @@ This repo is not that great because it is just to show to devnest's friends. so,
 
 | Days (click to view code)                                                     | Topics Covered                         | Live Preview                                                                 |
 | ----------------------------------------------------------------------------- | -------------------------------------- | ---------------------------------------------------------------------------- |
-| [Day1](./d1)                                                              | Basic Html From                        | [link]      
-| [Day2](./Day-2)                                                              | Basic CSS Form                         | [link]                 |
-| [Day3](./Day-3)                                                              | Resume with css                        | [link]                  |
-| [Day4](./Day-4)                                                              | Clock with css                         | [link]                 |
-| [Day5](./Day-5)                                                              | Basic Calculator                       | [link] |
-| [Day6](./Day-6)                                                              | JS Array questions                     | [link]                                                   |
-| [Day7](./Day-7)                                                              | JS Object questions                    | [link]                                                                          |
-| [Day8](./Day-8)                                                              | Checkbox Invader                       | [link]          |
-| [Day9](./Day-9)                                                              | Book your seats                        | [link]   |
-| [Day10](./Day-10)                                                             | Memory Cards                           | [link]      |
-| [Day11](./Day-11)                                                             | Quiz App                               | [link]      |
-| [Day12](./Day-12)                                                             | Todo List                              | [link]       |
-| [Day13](./Day-13)                                                             | Api App                                | [link]       |
+| [Day1](./d_1_2)                                                              | Basic Html From                        | [link]      
+| [Day2](./d_1_2/style.css)                                                              | Basic CSS Form                         | [link]                 |
+| [Day3](./d3)                                                              | Resume with css                        | [link]                  |
+| [Day4](./d4)                                                              | Clock with css                         | [link]                 |
+| [Day5](./d5)                                                              | Basic Calculator                       | [link] |
+| [Day6](./d6)                                                              | JS Array questions                     | [link]                                                   |
+| [Day7](./d7)                                                              | JS Object questions                    | [link]                                                |
+| [Day8](./d8)                                                              | Pending !                       | [link]          |
+| [Day9](./d9)                                                              | Book your seats                        | [link]   |
+| [Day10](./d10_mindgame)                                                             | Memory Cards                           | [link]      |
+| [Day11](./d11_quiz)                                                             | Quiz App                               | [link]      |
+| [Day12](./d12_ToDo)                                                             | Todo List                              | [link]       |
+| [Day13](./d13_14)                                                             | Api App                                | [link]       |
 | [Day14](./Day-14)                                                             | JS Events App                          | [link]       |
 | [Day15](./Day-15)                                                             | React Basic App                        | [link]      |
 
