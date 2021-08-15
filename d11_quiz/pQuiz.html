@@ -69,10 +69,10 @@
     <section class="w3-aqua">
         <div id="qdiv" class="question w3-grey"><span>No.</span> <span> Question </span></div>
         <div id="opdiv" class="optionContainer w3-cyan">
-            <div class="option"> A. <span></span></div>
-            <div class="option"> B. <span></span></div>
-            <div class="option"> C. <span></span></div>
-            <div class="option"> D. <span></span></div>
+            <div class="option"> </div>
+            <div class="option"></div>
+            <div class="option"></div>
+            <div class="option"></div>
         </div>
         <div>
         <button onclick="prev()" style="margin-left: 0px; margin-right: 40%;"> PREV</button>
@@ -112,7 +112,7 @@
         qdiv[1].innerHTML = questions[t].question
         for (let i = 0; i < 4; ++i) {
             opdiv[i].style.backgroundColor = 'white'
-            opdiv[i].children[0].innerHTML = questions[t].options[i + 1]
+            opdiv[i].innerHTML = `${i+1}.  ${questions[t].options[i + 1]}`
         }
         clicked = true;
     }
