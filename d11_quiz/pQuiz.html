@@ -63,8 +63,9 @@
     <header class="w3-container w3-border-bottom">
         <h1>Lets Quiz</h1>
     </header>
-    <div class="timer w3-light-blue" style="margin-right: 10px; margin-left: auto;"> Time left - <span id="time"
-            class="w3-white">2:00</span></div>
+    <div class="timer w3-light-blue" style="margin-right: 10px; margin-left: auto;">
+         Time left - <span id="time"
+            class="w3-white"> 02:00 </span></div>
     <section class="w3-aqua">
         <div id="qdiv" class="question w3-grey"><span>No.</span> <span> Question </span></div>
         <div id="opdiv" class="optionContainer w3-cyan">
@@ -101,7 +102,7 @@
         ans: "Hyper Text Transfer Protocol"
     }
     ];
-    let qno = 0;
+    let qno = 0, clicked = false;
     let qdiv = document.getElementById('qdiv').children
     let opdiv = document.getElementById('opdiv').children
     document.getElementById('opdiv').addEventListener('click',ansCheck);
@@ -113,6 +114,7 @@
             opdiv[i].style.backgroundColor = 'white'
             opdiv[i].children[0].innerHTML = questions[t].options[i + 1]
         }
+        clicked = true;
     }
 
     function next() {
@@ -127,6 +129,7 @@
     }
     function ansCheck(e){
         let x= e.target;
+        if(clicked){
         if(x.tagName === 'DIV')
         if(x.innerHTML !== questions[qno].ans){
         x.style.backgroundColor = 'red'
@@ -136,7 +139,10 @@
         opdiv[ele-1].style.backgroundColor = 'green'
         // console.log(ele)
     })
+    clicked = false
     }
+}
+
     qgenerate(0);
 </script>
 
